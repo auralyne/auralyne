@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/260ce434-1501-42d1-a944-c75fbffcbf7c" alt="Auralyne" width="180"/>
+  <img src="https://github.com/user-attachments/assets/260ce434-1501-42d1-a944-c75fbffcbf7c" alt="Auralyne" width="240"/>
 </p>
 
 <h1>Auralyne</h1>
@@ -17,10 +17,10 @@
 ### Windows
 
 ```shell
-curl -fsSL https://auralyne.com/install.sh | sh
+not yet available
 ```
 
-or [download manually](https://github.com/auralyne-systems/auralyne/releases/latest/download/Auralyne-Setup.exe)
+or [download manually (not yet available)](https://github.com/auralyne-systems/auralyne/releases/latest/download/Auralyne-Setup.exe)
 
 # What is Auralyne?
 
@@ -30,24 +30,6 @@ During installation, Auralyne automatically downloads models adapted to the user
 
 Auralyne is built around local **GGUF inference**, automatic model management, and a unified interface for different types of AI workloads.
 
-```text
-                    Auralyne
-                       │
-          ┌────────────┼────────────┐
-          │            │            │
-          ▼            ▼            ▼
-        Chat         Vision        Voice
-          │            │            │
-          ▼            ▼            ▼
-       Best model   Best model   Best model
-          │            │            │
-          └────────────┼────────────┘
-                       ▼
-                  Local Runtime
-                       │
-                       ▼
-                  Your Hardware
-```
 
 # Current Features
 
@@ -57,27 +39,6 @@ Run compatible `.gguf` models directly on your machine.
 
 Auralyne handles the local runtime and exposes the model through a simple desktop interface.
 
-### Automatic model management
-
-Auralyne detects the available hardware and can download models adapted to the system.
-
-The goal is to remove unnecessary complexity from local AI:
-
-```text
-Your hardware
-      │
-      ▼
-Hardware detection
-      │
-      ▼
-Model compatibility
-      │
-      ▼
-Automatic model selection
-      │
-      ▼
-Local inference
-```
 
 ### Local chat
 
@@ -109,33 +70,6 @@ Auralyne uses a native architecture designed around local inference and system-l
 
 The architecture separates the user interface from the local inference and system layers:
 
-```text
-                    Auralyne
-                       │
-                ┌──────┴──────┐
-                │   React UI  │
-                │ TypeScript  │
-                └──────┬──────┘
-                       │
-                ┌──────┴──────┐
-                │    Tauri    │
-                └──────┬──────┘
-                       │
-                ┌──────┴──────┐
-                │    Rust     │
-                │   Backend   │
-                └──────┬──────┘
-                       │
-                ┌──────┴──────┐
-                │  llama.cpp  │
-                └──────┬──────┘
-                       │
-                       ▼
-                  GGUF Models
-                       │
-                       ▼
-                  Your Hardware
-```
 
 # Coming Soon
 
@@ -157,19 +91,6 @@ Auralyne will support **Model Context Protocol (MCP)** connections.
 
 This will allow models to access external tools through a standardized interface.
 
-```text
-Auralyne
-    │
-    ▼
-Local Model
-    │
-    ▼
-MCP
-    │
-    ├── Tools
-    ├── Services
-    └── External systems
-```
 
 ### API connections
 
@@ -207,6 +128,7 @@ Current
        ▼
 Next
   │
+  ├── File upload
   ├── Automatic model selection
   ├── Vision
   ├── Voice
@@ -218,7 +140,6 @@ Future
   │
   └── Advanced local agents
        │
-       ├── Files
        ├── Applications
        ├── Commands
        ├── Tools
