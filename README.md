@@ -1,438 +1,149 @@
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/260ce434-1501-42d1-a944-c75fbffcbf7c" alt="Auralyne" width="240"/>
+  <img src="https://github.com/user-attachments/assets/260ce434-1501-42d1-a944-c75fbffcbf7c" alt="Auralyne logo" width="240"/>
+</p>
+<h1 align="center">Auralyne</h1>
+<p align="center">
+  <strong> Autonomous coding application</strong>
+</p>
+<p align="center">
+  Build, modify, compile, and debug projects with AI agents
 </p>
 
-<h1>Auralyne</h1>
+## What is Auralyne?
 
-<p>
-  <strong>Local AI. Autonomous embedded coding. Full control.</strong>
-</p>
+**Auralyne is a desktop coding environment built around autonomous AI agents.** It is designed to do more than generate snippets: the agent can inspect a project, research technical information, edit files, run available development tools, analyze errors, and work through multi-step tasks.
 
-<p>
-  Build, modify, compile, debug, and deploy Arduino and ESP32 projects using autonomous AI agents.
-</p>
+Auralyne combines AI model management, project context, documentation research, library workflows, compilation, and debugging in one application. Its key differentiator is a dedicated focus on **Arduino, ESP32, and embedded development**, alongside general software coding.
+
+## Key features
+
+### Autonomous coding agent
+
+Depending on the model, available tools, permissions, and project setup, the agent can:
+
+- Inspect project files and understand their structure.
+- Create and modify source files.
+- Research documentation, APIs, and code examples.
+- Find relevant libraries and investigate dependencies.
+- Run available development commands.
+- Compile projects and inspect build output.
+- Analyze errors, apply fixes, and repeat validation.
+
+The goal is to connect research, code changes, and build checks in one workflow rather than making users switch constantly between a chatbot, editor, terminal, and documentation.
+
+### Arduino and ESP32 development
+
+Auralyne is designed for embedded projects as well as conventional software. It can work with:
+
+- Arduino sketches and ESP32 firmware.
+- C and C++ source code.
+- PlatformIO projects and configuration.
+- GPIO and peripheral code.
+- Sensors, displays, motors, and communication modules.
+- Wi-Fi, Bluetooth, I²C, SPI, UART, PWM, ADC, and DAC use cases.
+- Board-specific documentation, libraries, and build requirements.
+
+When the relevant toolchains and dependencies are configured, the agent can help modify firmware, compile projects, and investigate build failures. Check hardware specifications, pin assignments, voltage levels, and power requirements before connecting or powering components.
+
+### Local AI models
+
+Run compatible `.gguf` models on your own computer using **`llama.cpp`**.
+
+- Download supported models through Auralyne or from Hugging Face, where available.
+- Import compatible local model files manually.
+- Manage and select installed models.
+- Choose models based on your hardware and task.
+- Run inference locally without sending project context to an external AI provider.
+
+Performance and compatibility depend on the model, quantization, context size, runtime, and available hardware.
+
+### External AI through API keys
+
+Auralyne can connect to supported external AI providers using your own API key. This gives you the flexibility to choose between local inference and hosted models, depending on your needs.
+
+API availability and pricing depend on the provider. Requests sent to an external provider are subject to its service terms and privacy policy.
+
+### Documentation and library research
+
+The agent can research information relevant to a project, including:
+
+- Official Arduino and ESP32 documentation.
+- Library documentation and API references.
+- GitHub repositories and code examples.
+- Datasheets and hardware specifications.
+- Project configuration and dependency requirements.
+
+Research results should be checked for relevance and compatibility with the versions used by your project.
+
+### Compilation and debugging
+
+Where the required development tools are available, Auralyne can use real build output to help validate code. Workflows can include compiling a project, inspecting warnings and errors, investigating missing libraries or incompatible APIs, changing source code or configuration, and compiling again.
+
+A successful build does not guarantee that firmware will behave correctly on physical hardware, so testing on the target board remains important.
+
+### Project-aware development
+
+The agent is designed to work with the context of a project, including its files, directories, source code, configuration, libraries, build systems, documentation, and available development tools. This helps connect research and code changes to the actual project instead of treating every request as an isolated prompt.
+
+## Model support
+
+### Local models
+
+Auralyne supports compatible GGUF models through `llama.cpp`. Models can be obtained through supported downloads or imported manually. Local inference offers control over model selection and can keep project context on your machine.
+
+### API models
+
+Supported external AI providers can be used with a user-supplied API key. Model availability, costs, and data handling depend on the selected provider and the current Auralyne integration.
+
+## Architecture and technology
+
+Auralyne uses a desktop architecture that connects the user interface, agent runtime, model inference, and development tools.
+
+### Core technologies
+
+- **Rust** — native backend and system integration.
+- **Tauri** — desktop application framework.
+- **React** — user interface.
+- **Vite** — frontend tooling.
+- **llama.cpp** — local language-model inference.
+- **GGUF** — supported local model format.
+- **MCP** — planned tool and context integration.
+
+
+## Roadmap
+
+Auralyne is actively evolving. The following are development directions and may not be available in the current build:
+
+- More advanced autonomous agent workflows.
+- More complete embedded build and firmware workflows.
+- Expanded hardware and schematic support.
+- MCP tool integrations and Git integration.
+- Local vision-capable models for screenshot, image, and diagram analysis.
+- Local voice interaction and speech recognition.
+- Improved agent memory and longer multi-step tasks.
+- A broader ecosystem of local embedded development tools.
+
+## Philosophy
+
+- **Autonomous** — Help users complete development tasks, not just generate snippets.
+- **Embedded-first** — Treat Arduino, ESP32, and microcontroller workflows as core use cases.
+- **Local-first** — Support running compatible models directly on the user's hardware.
+- **Flexible** — Offer a choice between compatible local models and supported API providers.
+- **Verified** — Encourage research, compilation, and error analysis instead of blindly trusting generated code.
+- **User-controlled** — Keep model selection and development decisions visible.
 
 ## Download
 
 ### Windows
 
-~~~shell
-not yet available
-~~~
+**Prebuilt releases are coming soon.** Watch the repository for release announcements, or build Auralyne from source in the meantime.
 
-or [download manually (not yet available)](https://github.com/auralyne-systems/auralyne/releases/latest/download/Auralyne-Setup.exe)
+- [View the GitHub repository](https://github.com/auralyne-systems/auralyne)
+- [Check GitHub Releases](https://github.com/auralyne-systems/auralyne/releases)
 
-# What is Auralyne?
+## Project status
 
-**Auralyne is a local-first autonomous vibe coding environment specialized in Arduino and ESP32 development.**
+> Auralyne is currently in active development.
 
-Auralyne combines local LLM inference, project context, web research, documentation, libraries, development tools, compilation, debugging, hardware information, schematics, and autonomous agent execution in a single desktop application.
-
-Instead of only generating code, Auralyne is designed to understand an embedded project, inspect its files, research the required information, find and use the appropriate libraries, modify the code, compile it, analyze errors, debug problems, and iterate until the task is completed.
-
-Auralyne can work with **local GGUF models**, models downloaded through **Hugging Face**, or external AI providers using the user's own **API key**.
-
-The local coding workflow runs using **llama.cpp** and local GGUF models.
-
-# Current Features
-
-### Local GGUF inference
-
-Run compatible `.gguf` models directly on your machine using **llama.cpp**.
-
-Auralyne manages the local inference runtime and provides the model layer required by the coding agent.
-
-Models can be:
-
-- Installed manually
-- Downloaded through Auralyne
-- Downloaded from Hugging Face
-- Managed locally
-- Selected directly from the application
-- Configured for different hardware and use cases
-
-Auralyne can also connect to external AI providers using a user-provided API key.
-
-### Local chat
-
-Auralyne provides a local AI interface with:
-
-- Local model execution
-- Model discovery
-- Model selection
-- Model management
-- Persistent conversations
-- Conversation history
-- Streaming responses
-- Markdown rendering
-- Code blocks
-- Local inference
-- External API model support
-
-### Arduino and ESP32 development
-
-Auralyne is specifically designed around embedded development workflows.
-
-The agent can work with:
-
-- Arduino projects
-- ESP32 projects
-- Arduino sketches
-- C/C++ source code
-- PlatformIO projects
-- Project configuration
-- Libraries
-- GPIO and peripheral configuration
-- Hardware-specific code
-- Firmware
-- Sensors
-- Displays
-- Motors
-- Communication modules
-
-### Autonomous coding
-
-The coding agent is designed to execute multi-step embedded development tasks.
-
-This includes:
-
-- Reading project files
-- Creating files
-- Modifying existing code
-- Understanding project structure
-- Installing or using libraries
-- Running development commands
-- Compiling firmware
-- Inspecting compiler output
-- Analyzing errors
-- Applying fixes
-- Recompiling
-- Iterating on tasks
-- Verifying the result
-
-### Compilation and debugging
-
-Auralyne can use development tools to validate generated code instead of relying only on the model's assumptions.
-
-The agent can:
-
-- Compile projects
-- Inspect compiler errors
-- Analyze warnings
-- Identify incompatible APIs
-- Detect missing libraries
-- Apply fixes
-- Recompile the project
-- Analyze build failures
-- Iterate until the code builds correctly
-
-### Web research
-
-Auralyne can research information required to complete a development task.
-
-The agent can use web research to find:
-
-- Arduino documentation
-- ESP32 documentation
-- Library documentation
-- API references
-- Hardware specifications
-- Examples
-- GitHub repositories
-- Technical solutions
-- Community information
-
-This allows the agent to verify information instead of relying exclusively on its internal knowledge.
-
-### Documentation and library research
-
-Auralyne is designed to work with the documentation required for embedded development.
-
-The agent can search and read:
-
-- Arduino documentation
-- ESP32 documentation
-- Library documentation
-- API references
-- GitHub repositories
-- Project documentation
-- Datasheets
-- Technical documents
-- Code examples
-
-This is particularly important for Arduino and ESP32 development, where library APIs, board variants, GPIO capabilities, peripheral implementations, and hardware limitations can differ between platforms.
-
-### Hardware-aware development
-
-Auralyne can reason about the hardware context of an embedded project.
-
-The agent can work with:
-
-- GPIO configuration
-- Sensors
-- Displays
-- Motors
-- Communication modules
-- Wi-Fi
-- Bluetooth
-- I2C
-- SPI
-- UART
-- PWM
-- ADC
-- DAC
-- ESP32 peripherals
-- Arduino peripherals
-
-The objective is to connect the software implementation with the actual hardware requirements of the project.
-
-### Schematics and wiring
-
-Auralyne can create and work with hardware schematics and wiring information.
-
-The agent can help determine:
-
-- Component connections
-- GPIO assignments
-- Power connections
-- Communication buses
-- Sensor wiring
-- Module connections
-- Arduino pin mappings
-- ESP32 pin mappings
-- Peripheral connections
-
-This allows software and hardware development to be handled together rather than as separate workflows.
-
-### Project-aware development
-
-Auralyne works directly with the user's development projects.
-
-The agent can work with:
-
-- Project files
-- Source code
-- Directories
-- Project configuration
-- Libraries
-- Build systems
-- Local development environments
-- Hardware configuration
-- Documentation
-- Development tools
-
-The project itself becomes part of the AI's context.
-
-# Model Support
-
-Auralyne supports multiple ways of using AI models.
-
-### Local models
-
-Run compatible GGUF models directly on the user's hardware using **llama.cpp**.
-
-Users can:
-
-- Install GGUF models manually
-- Download models from Hugging Face
-- Download models through the Auralyne marketplace
-- Manage installed models
-- Select models for their projects
-- Configure local inference
-- Use different models depending on their hardware
-
-This allows users to run AI locally without sending their source code or project context to an external provider.
-
-### API models
-
-Auralyne can also connect to external AI providers using the user's own API key.
-
-This allows users to choose between:
-
-- Local inference
-- External API models
-- Different models for different tasks
-- Different providers depending on their needs
-
-Users remain in control of which provider and model they use.
-
-# Backend
-
-Auralyne uses a native architecture designed around local inference, autonomous agents, embedded development, and system-level integration.
-
-### Core technologies
-
-- **Rust** — Native backend and system integration
-- **llama.cpp** — Local LLM inference
-- **GGUF** — Local model format
-- **Tauri** — Desktop application framework
-- **TypeScript** — Application logic
-- **React** — User interface
-- **Vite** — Frontend tooling
-- **MCP** — Tool and context integration
-
-The architecture separates the user interface from the agent, local inference, development tools, and system layers:
-
-~~~text
-React / Tauri
-      │
-      ▼
- Agent Runtime
-      │
- ┌────┴─────────────────────────────┐
- ▼                                  ▼
-llama.cpp                        Local Tools
- ▼                                  │
-GGUF Models             Files / Shell / Build Tools
-                                       │
-                         ┌─────────────┴─────────────┐
-                         ▼                           ▼
-                  Web / Documentation         Arduino / ESP32
-                  Libraries / GitHub           Toolchains
-                         │                           │
-                         └─────────────┬─────────────┘
-                                       ▼
-                                Compile / Debug
-                                       │
-                                       ▼
-                              Firmware / Schematics
-~~~
-
-# Coming Soon
-
-Auralyne is actively under development.
-
-The platform is being expanded into a complete autonomous embedded development environment.
-
-### Vision
-
-Auralyne will support local vision-capable models for tasks such as:
-
-- Screenshot analysis
-- Visual debugging
-- Hardware setup analysis
-- Diagram interpretation
-- Image-based development workflows
-- Hardware and wiring analysis
-
-### Voice
-
-Local voice interaction is planned, including speech recognition and voice-based interaction with the coding agent.
-
-### MCP
-
-Auralyne will support **Model Context Protocol (MCP)** connections.
-
-This will allow agents to access additional tools and services through a standardized interface.
-
-### Advanced local agents
-
-Auralyne is being developed toward an autonomous local agent system capable of interacting directly with the user's development environment.
-
-Agents will be designed to work with:
-
-- Local files
-- Applications
-- Commands
-- Development tools
-- Arduino toolchains
-- ESP32 toolchains
-- Documentation
-- Web research
-- Libraries
-- MCP servers
-- APIs
-- Git repositories
-- Hardware projects
-- Schematics
-- Multi-step tasks
-- Automated workflows
-
-The objective is to provide a **complete embedded vibe coding environment**, rather than a traditional AI chat application.
-
-# Roadmap
-
-~~~text
-Current
-  │
-  ├── GGUF inference
-  ├── Local chat
-  ├── Model discovery
-  ├── Model management
-  ├── Hugging Face models
-  ├── Manual GGUF installation
-  ├── API model support
-  ├── Project context
-  ├── Arduino / ESP32 development
-  ├── Web research
-  ├── Documentation research
-  ├── Library research
-  ├── File operations
-  ├── Code generation
-  ├── Compilation
-  ├── Error analysis
-  ├── Debugging
-  └── Hardware-aware development
-       │
-       ▼
-Next
-  │
-  ├── Advanced autonomous agents
-  ├── Hardware-aware workflows
-  ├── Automated firmware workflows
-  ├── Advanced schematics
-  ├── MCP
-  ├── Git integration
-  └── Extended embedded tool ecosystem
-       │
-       ▼
-Future
-  │
-  ├── Vision
-  ├── Voice
-  ├── Advanced agent memory
-  ├── Multi-step autonomous workflows
-  └── Extended local embedded tool ecosystem
-~~~
-
-# Philosophy
-
-**Local.**
-
-Run AI directly on the user's hardware whenever possible.
-
-**Autonomous.**
-
-AI should be able to execute complete development tasks rather than only generate code.
-
-**Embedded-first.**
-
-Auralyne is designed specifically around Arduino, ESP32, and embedded development workflows.
-
-**Private.**
-
-Source code, project context, and agent execution should remain local by default.
-
-**Verified.**
-
-AI should be able to research documentation, inspect libraries, compile code, and analyze errors instead of blindly assuming that generated code is correct.
-
-**Flexible.**
-
-Users can choose between local GGUF models, Hugging Face models, and external AI providers using their own API keys.
-
-**Simple.**
-
-Embedded AI development should not require users to manually manage complex inference configuration.
-
-**Powerful.**
-
-Advanced users should be able to control models, tools, runtimes, APIs, MCP servers, and agent behavior.
-
-# Status
-
-> 🚧 Auralyne is currently in active development.
-
-Auralyne is evolving from a local AI coding interface into a **complete autonomous vibe coding environment for Arduino, ESP32, and embedded development**.
-
-Features described in the roadmap are under development and may change as the platform evolves.
+Auralyne aims to provide a complete autonomous coding environment for general software development, with a particular focus on Arduino, ESP32, and embedded systems. Available features may vary by build, model, configured toolchain, and connected provider; roadmap items may change as development progresses.
