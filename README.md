@@ -1,100 +1,165 @@
 # Auralyne
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/260ce434-1501-42d1-a944-c75fbffcbf7c" alt="Auralyne logo" width="120" />
+  <img src="https://github.com/user-attachments/assets/260ce434-1501-42d1-a944-c75fbffcbf7c" alt="Auralyne logo" width="100" />
 </p>
 
-<h3 align="center">Your local AI coding assistant for embedded development.</h3>
+<h3 align="center">Local AI. Real hardware. Your ideas.</h3>
 
 <p align="center">
-  Build, debug, and develop Arduino and ESP32 projects with AI — running locally on your own hardware.
+  An AI-powered development environment for Arduino, ESP32, and embedded systems.
+  <br />
+  Write code, explore solutions, and develop firmware with AI running on your own hardware.
 </p>
 
 <p align="center">
-  <a href="#features">Features</a> •
-  <a href="#demo">Demo</a> •
-  <a href="#technology">Technology</a> •
+  <a href="#the-vision">The vision</a> ·
+  <a href="#see-it-in-action">Demo</a> ·
+  <a href="#features">Features</a> ·
+  <a href="#architecture--technology">Architecture</a> ·
   <a href="#roadmap">Roadmap</a>
 </p>
 
 ---
 
-## What is Auralyne?
+## The vision
 
-Auralyne is a local-first AI development environment designed to make embedded programming easier.
+**Embedded development should feel more accessible, without taking control away from the developer.**
 
-It combines AI-assisted coding with a development workflow tailored to microcontrollers and electronics projects. The goal is to help you go from an idea to working firmware while keeping control over your projects and AI models.
+Auralyne is a local-first AI development environment built around the intersection of AI-assisted coding, microcontrollers, and electronics.
 
-Whether you're working with Arduino, ESP32, or other supported boards, Auralyne aims to bring coding, debugging, and project assistance into one place.
+The goal is to bring AI assistance closer to the hardware development workflow — from understanding an existing project to writing firmware and investigating errors.
 
-## Demo
+Designed with local AI at its core, Auralyne aims to give developers greater control over their models, their configuration, and their projects.
+
+## See it in action
 
 <p align="center">
-  <img src="./assets/auralyne-demo.gif" alt="Auralyne application demo" width="800" />
+  <img
+    src="./assets/auralyne-demo.gif"
+    alt="Auralyne — local AI coding assistant demonstration"
+    width="900"
+  />
+</p>
+
+<p align="center">
+  <em>From an idea to code, with AI as your development partner.</em>
 </p>
 
 ## Features
 
-- **AI coding agent** — Get help writing, modifying, and understanding code.
-- **Local AI inference** — Run compatible GGUF models locally through `llama.cpp`.
-- **Embedded development** — Designed around Arduino, ESP32, and microcontroller projects.
-- **Project-aware assistance** — Work with your project's files and existing code.
-- **Debugging assistance** — Investigate errors and improve your implementation.
-- **Library and pin guidance** — Get help with libraries, board pins, and hardware integration.
-- **Wiring assistance** — A foundation for connecting firmware and electronics workflows.
-- **Model configuration** — Configure supported models and inference settings.
-- **Privacy-oriented design** — Local inference helps keep your code and prompts on your machine when using local models.
+### AI-assisted development
 
-*Features and hardware support are under active development.*
+- **AI coding agent** — Generate, explain, and modify code with AI assistance.
+- **Project-aware workflows** — Work with existing project files and code.
+- **Debugging assistance** — Investigate errors and explore possible solutions.
 
-## Technology
+### Built for embedded systems
 
-| Component | Technology |
-|---|---|
-| Desktop application | Tauri |
-| Frontend | React |
-| Build tooling | Vite |
-| Backend | Rust |
-| Local AI inference | `llama.cpp` |
-| Database | SQLite |
-| Target projects | Arduino, ESP32, and embedded systems |
+- **Arduino and ESP32** — Focused on microcontroller development.
+- **Libraries and pin guidance** — Get assistance with board-specific details and hardware integration.
+- **Hardware-oriented workflows** — A foundation for connecting firmware development with electronics and wiring.
 
-## AI Models
+### Local-first AI
+
+- **Local model inference** — Run compatible GGUF models through [`llama.cpp`](https://github.com/ggml-org/llama.cpp).
+- **Configurable inference** — Adjust supported model settings to suit your hardware and workflow.
+- **Greater control** — Keep local inference on your own machine when using local models.
+
+*Capabilities and hardware support are actively evolving.*
+
+## Architecture & technology
+
+Auralyne combines a desktop application, a web-based user interface, a native backend, local model inference, and persistent data storage.
+
+### Technology stack
+
+| Layer | Technology | Official documentation |
+|---|---|---|
+| Desktop framework | [Tauri](https://tauri.app/) | [Architecture](https://tauri.app/concept/architecture/) · [Process model](https://tauri.app/concept/process-model/) |
+| Frontend | [React](https://react.dev/) | [Learn React](https://react.dev/learn) · [API reference](https://react.dev/reference/react) |
+| Build tooling | [Vite](https://vite.dev/) | [Getting started](https://vite.dev/guide/) · [Configuration](https://vite.dev/config/) |
+| Native backend | [Rust](https://www.rust-lang.org/) | [The Rust Book](https://doc.rust-lang.org/book/) · [Standard library](https://doc.rust-lang.org/std/) |
+| Local inference | [llama.cpp](https://github.com/ggml-org/llama.cpp) | [Repository](https://github.com/ggml-org/llama.cpp) · [Build instructions](https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md) |
+| Model format | [GGUF](https://github.com/ggml-org/llama.cpp/wiki) | [llama.cpp documentation and wiki](https://github.com/ggml-org/llama.cpp/wiki) |
+| Database | [SQLite](https://sqlite.org/) | [Documentation](https://sqlite.org/docs.html) · [SQL language](https://sqlite.org/lang.html) |
+| Web technologies | [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) · [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) · [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | [MDN Web Docs](https://developer.mozilla.org/) |
+
+### How the architecture fits together
+
+- **Desktop layer:** Tauri connects the desktop application to its native capabilities through a WebView and a Rust-based core.
+- **Interface layer:** React handles the component-based user interface, while Vite provides the development server and build tooling.
+- **Backend layer:** Rust provides native application functionality and access to system-level operations.
+- **AI layer:** `llama.cpp` provides local inference for compatible GGUF models.
+- **Persistence layer:** SQLite stores application data locally.
+
+
+## Local AI & model ecosystem
 
 Auralyne is designed to work with compatible local GGUF models through `llama.cpp`.
 
-The models you can run depend on your hardware, available memory, context size, and model quantization.
+Actual performance depends on the model architecture, quantization, context size, available memory, and hardware acceleration.
 
-External AI providers may also be integrated where supported.
+### Model and inference references
+
+| Resource | Description |
+|---|---|
+| [`llama.cpp`](https://github.com/ggml-org/llama.cpp) | C/C++ inference engine for supported language models |
+| [GGUF format documentation](https://github.com/ggml-org/llama.cpp/wiki) | References for the model file format and ecosystem |
+| [Hugging Face Hub](https://huggingface.co/models) | Discover publicly available models |
+| [Hugging Face GGUF documentation](https://huggingface.co/docs/hub/gguf) | Learn about GGUF model files |
+| [Hugging Face Transformers documentation](https://huggingface.co/docs/transformers/index) | Reference for model architectures and machine learning workflows |
+
+These are ecosystem references, not a guarantee that every model, format, or external service is supported directly by Auralyne.
+
+## Embedded development resources
+
+Auralyne focuses on the workflow around microcontrollers and firmware development.
+
+| Resource | What it covers |
+|---|---|
+| [Arduino documentation](https://docs.arduino.cc/) | Boards, programming, libraries, and development tools |
+| [Arduino language reference](https://docs.arduino.cc/language-reference/) | Core language functions and syntax |
+| [Arduino libraries](https://docs.arduino.cc/libraries/) | Library discovery and documentation |
+| [Espressif documentation](https://docs.espressif.com/) | Official ESP32 and Espressif technical documentation |
+| [ESP-IDF programming guide](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/) | Espressif's development framework for ESP32 |
+| [ESP32 technical documents](https://www.espressif.com/en/support/documents/technical-documents/esp32-) | Hardware manuals and technical references |
+| [PlatformIO documentation](https://docs.platformio.org/) | An additional reference for embedded development workflows |
+
+The availability of a reference does not imply that its associated toolchain is fully integrated into Auralyne.
 
 ## Roadmap
 
+Auralyne is under active development. This roadmap describes areas of work, not guaranteed release dates.
+
 - [x] Desktop application foundation
-- [x] Local-first application architecture
-- [x] Local GGUF model integration
-- [ ] Improve autonomous coding workflows
-- [ ] Expand compilation and debugging assistance
-- [ ] Improve library and board compatibility
-- [ ] Develop wiring and hardware visualization tools
-- [ ] Improve model management and download progress
-- [ ] Refine the interface and overall user experience
+- [x] Local-first architecture
+- [x] Initial GGUF model integration
+- [ ] Improve autonomous coding and multi-step workflows
+- [ ] Strengthen compilation and debugging assistance
+- [ ] Expand board and library support
+- [ ] Improve model downloads and management
+- [ ] Develop hardware and wiring visualization
+- [ ] Refine the overall user experience
 
-## Design Principles
+## Design principles
 
-- **Local first** — Prioritize running AI models on your own hardware.
-- **Developer focused** — Keep the workflow centered on real projects and code.
-- **Embedded oriented** — Build tools specifically useful for microcontrollers and electronics.
-- **Transparent** — Make model configuration and inference settings accessible.
-- **Open development** — Improve the project iteratively with feedback.
+| Principle | What it means |
+|---|---|
+| **Local first** | Prioritize local inference and user control. |
+| **Developer focused** | Keep the workflow centered on real projects. |
+| **Hardware aware** | Build around the needs of embedded development. |
+| **Configurable** | Make relevant model settings accessible. |
+| **Iterative** | Develop, test, and improve through feedback. |
 
-## Project Status
+## Project status
 
-Auralyne is an independent project under active development. Features, supported models, and workflows may change as development progresses.
+Auralyne is an independent project in active development. Its features, supported models, and workflows may change as development continues.
 
-Feedback, suggestions, and contributions are welcome!
+The long-term goal is to create a cohesive environment where AI-assisted software development and embedded hardware projects work together naturally.
 
----
+## Feedback & contributions
 
-<p align="center">
-  Made with care for local AI and embedded development.
-</p>
+Ideas, feedback, and suggestions are welcome.
+
+If you're interested in local AI, embedded development, or the intersection of software and hardware, follow the project's progress and share your thoughts.
